@@ -49,6 +49,11 @@ RUN npm install -g homebridge \
 #    homebridge-nest \
 #    homebridge-wink --unsafe-perm
 
+# Copy Startscript
+ADD https://raw.githubusercontent.com/marcob82/homebridge/master/run.sh /root/run.sh
+RUN ["chmod", "+x", "/root/run.sh"]
+
+
 ##################################################
 # Start                                          #
 ##################################################
@@ -56,7 +61,8 @@ RUN npm install -g homebridge \
 USER root
 RUN mkdir -p /var/run/dbus
 
-ADD ./run.sh /root/run.sh
-
+#ADD run.sh /root/run.sh
 EXPOSE 5353 51826
+VOLUME ["/root/.homebridge"]
+
 CMD ["/root/run.sh"]
