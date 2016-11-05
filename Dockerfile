@@ -1,5 +1,5 @@
 FROM nodesource/xenial
-MAINTAINER MarcoB82
+MAINTAINER marcob82
 
 ##################################################
 # Set environment variables                      #
