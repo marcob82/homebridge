@@ -50,7 +50,7 @@ RUN npm install -g homebridge \
 #    homebridge-wink --unsafe-perm
 
 # Copy Startscript
-ADD https://raw.githubusercontent.com/marcob82/homebridge/master/run.sh /root/run.sh
+ADD run.sh /root/run.sh
 RUN ["chmod", "+x", "/root/run.sh"]
 
 
